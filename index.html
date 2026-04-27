@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Action Secours Formation – Formation SST & Incendie en Île-de-France</title>
+  <meta name="description" content="Action Secours Formation – Formations SST, manipulation extincteurs, évacuation incendie en Île-de-France. Formateur certifié, sapeur-pompier volontaire. Devis gratuit."/>
+  <meta name="keywords" content="formation SST Essonne, formation incendie Île-de-France, sauveteur secouriste travail, manipulation extincteurs, évacuation incendie, formation secourisme entreprise"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rouge: #D0201A;
+      --rouge-hover: #b01915;
+      --rouge-light: #fdf2f2;
+      --noir: #1a1a1a;
+      --gris-fonce: #2d2d2d;
+      --gris: #5a5a5a;
+      --gris-clair: #f4f4f4;
+      --blanc: #ffffff;
+      --vert: #2d7a2d;
+      --orange: #e07b20;
+      --border: #e8e8e8;
+      --shadow: 0 4px 24px rgba(0,0,0,0.08);
+      --shadow-hover: 0 8px 40px rgba(208,32,26,0.18);
+      --radius: 14px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      color: var(--noir);
+      background: var(--blanc);
+      line-height: 1.65;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 999;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--border);
+      padding: 0 5%;
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none; color: var(--noir);
+    }
+    .nav-logo .logo-icon {
+      width: 48px; height: 48px;
+    }
+    .nav-logo-text { line-height: 1.2; }
+    .nav-logo-text strong { display: block; font-size: 1.05rem; font-weight: 800; letter-spacing: -0.3px; }
+    .nav-logo-text span { font-size: 0.68rem; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--rouge); }
+    .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--gris-fonce);
+      font-size: 0.9rem; font-weight: 500;
+      padding: 7px 14px; border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-links a:hover { background: var(--rouge-light); color: var(--rouge); }
+    .nav-cta {
+      background: var(--rouge) !important; color: var(--blanc) !important;
+      border-radius: 8px !important; font-weight: 600 !important;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--rouge-hover) !important; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(208,32,26,0.3) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--noir); border-radius: 2px; transition: 0.3s; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #fff 0%, #fef7f7 40%, #fff5f5 100%);
+      padding: 90px 5% 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -60px; right: -80px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(208,32,26,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--rouge-light); border: 1.5px solid rgba(208,32,26,0.2);
+      color: var(--rouge); font-size: 0.82rem; font-weight: 600;
+      padding: 6px 14px; border-radius: 50px; margin-bottom: 22px;
+      letter-spacing: 0.3px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 800; line-height: 1.2;
+      color: var(--noir); margin-bottom: 20px;
+    }
+    .hero h1 em { font-style: normal; color: var(--rouge); }
+    .hero p {
+      font-size: 1.05rem; color: var(--gris); margin-bottom: 36px; max-width: 500px;
+    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 10px;
+      font-size: 0.95rem; font-weight: 600; font-family: 'Outfit', sans-serif;
+      text-decoration: none; cursor: pointer; border: none;
+      transition: transform 0.18s, box-shadow 0.2s, background 0.2s;
+    }
+    .btn-primary {
+      background: var(--rouge); color: var(--blanc);
+      box-shadow: 0 4px 20px rgba(208,32,26,0.25);
+    }
+    .btn-primary:hover { background: var(--rouge-hover); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(208,32,26,0.35); }
+    .btn-secondary {
+      background: var(--blanc); color: var(--rouge);
+      border: 2px solid var(--rouge);
+    }
+    .btn-secondary:hover { background: var(--rouge-light); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(208,32,26,0.12); }
+    .hero-visual {
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .hero-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .hero-card {
+      background: var(--blanc);
+      border-radius: var(--radius); padding: 22px 18px;
+      box-shadow: var(--shadow); border: 1.5px solid var(--border);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .hero-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .hero-card .icon { font-size: 2rem; margin-bottom: 10px; }
+    .hero-card h3 { font-size: 0.92rem; font-weight: 700; color: var(--noir); margin-bottom: 4px; }
+    .hero-card p { font-size: 0.8rem; color: var(--gris); }
+    .hero-stats {
+      display: flex; gap: 12px;
+    }
+    .stat-box {
+      flex: 1; background: var(--blanc);
+      border-radius: var(--radius); padding: 16px;
+      box-shadow: var(--shadow); border: 1.5px solid var(--border);
+      text-align: center;
+    }
+    .stat-box strong { display: block; font-size: 1.5rem; font-weight: 800; color: var(--rouge); }
+    .stat-box span { font-size: 0.75rem; color: var(--gris); font-weight: 500; }
+
+    /* ── SECTION TITLE ── */
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--rouge);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      font-weight: 800; color: var(--noir); margin-bottom: 14px;
+    }
+    .section-title em { font-style: normal; color: var(--rouge); }
+    .section-sub { color: var(--gris); font-size: 1rem; max-width: 560px; }
+    .section-header { margin-bottom: 52px; }
+    .section-header.center { text-align: center; }
+    .section-header.center .section-sub { margin: 0 auto; }
+
+    /* ── FORMATIONS ── */
+    .formations { padding: 90px 5%; background: var(--blanc); }
+    .formations-inner { max-width: 1200px; margin: 0 auto; }
+    .formations-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+
+    .formation-card {
+      background: var(--blanc);
+      border-radius: 18px; overflow: hidden;
+      border: 1.5px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .formation-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); }
+    .formation-card-header {
+      padding: 28px 28px 20px;
+      display: flex; align-items: flex-start; gap: 16px;
+    }
+    .formation-card-header.incendie { background: linear-gradient(135deg, #fff5f0 0%, #fff 100%); border-bottom: 2px solid rgba(208,32,26,0.1); }
+    .formation-card-header.sst { background: linear-gradient(135deg, #f0f8ff 0%, #fff 100%); border-bottom: 2px solid rgba(22,119,200,0.1); }
+    .formation-icon-big { font-size: 2.8rem; line-height: 1; flex-shrink: 0; }
+    .formation-card-header h3 { font-size: 1.25rem; font-weight: 800; color: var(--noir); margin-bottom: 6px; }
+    .formation-card-header p { font-size: 0.88rem; color: var(--gris); }
+    .formation-card-body { padding: 24px 28px; }
+    .formation-item {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 14px 0; border-bottom: 1px solid var(--border);
+    }
+    .formation-item:last-child { border-bottom: none; }
+    .formation-item-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; flex-shrink: 0;
+    }
+    .formation-item-icon.rouge { background: var(--rouge-light); }
+    .formation-item-icon.bleu { background: #f0f7ff; }
+    .formation-item h4 { font-size: 0.95rem; font-weight: 700; color: var(--noir); margin-bottom: 4px; }
+    .formation-item p { font-size: 0.83rem; color: var(--gris); }
+    .formation-card-footer { padding: 18px 28px; background: var(--gris-clair); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .tag {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.78rem; font-weight: 600; padding: 4px 12px;
+      border-radius: 50px;
+    }
+    .tag.rouge { background: var(--rouge-light); color: var(--rouge); }
+    .tag.vert { background: #edf7ed; color: var(--vert); }
+    .tag.bleu { background: #e8f4fd; color: #1a6fad; }
+    .tag.orange { background: #fdf0e0; color: var(--orange); }
+
+    /* ── TARIFS ── */
+    .tarifs { padding: 90px 5%; background: var(--gris-clair); }
+    .tarifs-inner { max-width: 1200px; margin: 0 auto; }
+    .tarifs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .tarif-card {
+      background: var(--blanc); border-radius: var(--radius);
+      border: 1.5px solid var(--border); overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .tarif-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+    .tarif-card-head {
+      padding: 22px 24px 18px;
+      border-bottom: 1px solid var(--border);
+    }
+    .tarif-card-head.incendie { background: linear-gradient(135deg, #fff5f0, #fff); }
+    .tarif-card-head.sst-init { background: linear-gradient(135deg, #f0f8ff, #fff); }
+    .tarif-card-head.sst-rec { background: linear-gradient(135deg, #f0fff4, #fff); }
+    .tarif-card-head h3 { font-size: 1rem; font-weight: 800; color: var(--noir); margin-bottom: 4px; }
+    .tarif-card-head p { font-size: 0.82rem; color: var(--gris); }
+    .tarif-icon { font-size: 1.8rem; margin-bottom: 8px; }
+    .tarif-rows { padding: 16px 24px; }
+    .tarif-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 0; border-bottom: 1px dashed var(--border);
+      font-size: 0.88rem;
+    }
+    .tarif-row:last-child { border-bottom: none; }
+    .tarif-row .nb { color: var(--gris); font-weight: 500; }
+    .tarif-row .prix { font-weight: 700; color: var(--rouge); font-size: 0.95rem; }
+    .tarif-financement {
+      margin: 0 24px 20px; padding: 8px 14px;
+      background: #edf7ed; border-radius: 8px;
+      font-size: 0.78rem; color: var(--vert); font-weight: 600;
+      display: flex; align-items: center; gap: 6px;
+    }
+
+    /* ── ABOUT ── */
+    .about { padding: 90px 5%; background: var(--blanc); }
+    .about-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1.2fr; gap: 70px; align-items: center;
+    }
+    .about-photo-wrap {
+      position: relative;
+    }
+    .about-photo-placeholder {
+      width: 100%; aspect-ratio: 4/5;
+      background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+      border-radius: 24px; overflow: hidden;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      border: 3px solid var(--border);
+      font-size: 4rem; color: #bbb;
+      position: relative;
+    }
+    .about-photo-placeholder img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .about-photo-placeholder .photo-hint {
+      font-size: 0.85rem; color: #aaa; font-family: 'Outfit', sans-serif; margin-top: 10px;
+    }
+    .about-badge-float {
+      position: absolute; bottom: -16px; right: -16px;
+      background: var(--rouge); color: var(--blanc);
+      border-radius: 14px; padding: 14px 18px;
+      box-shadow: 0 6px 24px rgba(208,32,26,0.3);
+      text-align: center;
+    }
+    .about-badge-float strong { display: block; font-size: 1.3rem; font-weight: 800; }
+    .about-badge-float span { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.5px; }
+    .about-content h2 { font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 800; color: var(--noir); margin-bottom: 20px; line-height: 1.25; }
+    .about-content h2 em { font-style: normal; color: var(--rouge); }
+    .about-content p { color: var(--gris); font-size: 0.97rem; margin-bottom: 16px; }
+    .about-atouts { display: flex; flex-direction: column; gap: 14px; margin: 28px 0; }
+    .atout {
+      display: flex; align-items: flex-start; gap: 14px;
+      background: var(--gris-clair); border-radius: 12px; padding: 14px 16px;
+      border-left: 4px solid var(--rouge);
+    }
+    .atout-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .atout-text strong { display: block; font-size: 0.9rem; font-weight: 700; color: var(--noir); }
+    .atout-text span { font-size: 0.82rem; color: var(--gris); }
+
+    /* ── POURQUOI ── */
+    .pourquoi { padding: 90px 5%; background: linear-gradient(135deg, #fdf2f2 0%, #fff 100%); }
+    .pourquoi-inner { max-width: 1200px; margin: 0 auto; }
+    .pourquoi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .pourquoi-card {
+      background: var(--blanc); border-radius: var(--radius);
+      padding: 30px 26px; border: 1.5px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-align: center;
+    }
+    .pourquoi-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+    .pourquoi-card .p-icon {
+      font-size: 2.4rem; margin-bottom: 16px;
+      display: flex; align-items: center; justify-content: center;
+      width: 64px; height: 64px; border-radius: 50%; margin: 0 auto 18px;
+    }
+    .pourquoi-card .p-icon.rouge { background: var(--rouge-light); }
+    .pourquoi-card .p-icon.vert { background: #edf7ed; }
+    .pourquoi-card .p-icon.orange { background: #fdf0e0; }
+    .pourquoi-card h3 { font-size: 1rem; font-weight: 700; color: var(--noir); margin-bottom: 10px; }
+    .pourquoi-card p { font-size: 0.86rem; color: var(--gris); }
+
+    /* ── CONTACT ── */
+    .contact { padding: 90px 5%; background: var(--blanc); }
+    .contact-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1.3fr; gap: 60px; align-items: start;
+    }
+    .contact-info h2 { font-size: clamp(1.5rem, 2.3vw, 2rem); font-weight: 800; margin-bottom: 16px; }
+    .contact-info h2 em { font-style: normal; color: var(--rouge); }
+    .contact-info p { color: var(--gris); font-size: 0.95rem; margin-bottom: 30px; }
+    .contact-tiles { display: flex; flex-direction: column; gap: 14px; }
+    .contact-tile {
+      display: flex; align-items: center; gap: 16px;
+      background: var(--gris-clair); border-radius: 12px; padding: 16px 18px;
+      text-decoration: none; color: var(--noir);
+      transition: background 0.2s, transform 0.2s;
+      border: 1.5px solid transparent;
+    }
+    .contact-tile:hover { background: var(--rouge-light); border-color: rgba(208,32,26,0.2); transform: translateX(4px); }
+    .contact-tile .ct-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: var(--rouge); color: var(--blanc);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; flex-shrink: 0;
+    }
+    .contact-tile strong { display: block; font-size: 0.85rem; font-weight: 700; }
+    .contact-tile span { font-size: 0.88rem; color: var(--rouge); font-weight: 600; }
+
+    /* Form */
+    .contact-form-wrap {
+      background: var(--gris-clair); border-radius: 20px;
+      padding: 36px 32px; border: 1.5px solid var(--border);
+    }
+    .contact-form-wrap h3 { font-size: 1.2rem; font-weight: 800; color: var(--noir); margin-bottom: 24px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+    .form-group label { font-size: 0.83rem; font-weight: 600; color: var(--gris-fonce); }
+    .form-group input, .form-group select, .form-group textarea {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem; color: var(--noir);
+      background: var(--blanc); border: 1.5px solid var(--border);
+      border-radius: 9px; padding: 11px 14px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--rouge); box-shadow: 0 0 0 3px rgba(208,32,26,0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit {
+      width: 100%; background: var(--rouge); color: var(--blanc);
+      font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 700;
+      border: none; border-radius: 10px; padding: 14px;
+      cursor: pointer; transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .form-submit:hover { background: var(--rouge-hover); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(208,32,26,0.3); }
+    .form-success {
+      display: none; text-align: center; padding: 24px;
+      color: var(--vert); font-weight: 600; font-size: 1rem;
+    }
+    .form-success.visible { display: block; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--noir); color: #aaa;
+      padding: 50px 5% 30px;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px;
+    }
+    .footer-brand .nav-logo { color: var(--blanc); margin-bottom: 14px; }
+    .footer-brand p { font-size: 0.85rem; line-height: 1.7; color: #888; }
+    footer h4 { font-size: 0.88rem; font-weight: 700; color: var(--blanc); margin-bottom: 14px; letter-spacing: 0.5px; }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    footer ul a { text-decoration: none; color: #888; font-size: 0.85rem; transition: color 0.2s; }
+    footer ul a:hover { color: var(--rouge); }
+    .footer-bottom {
+      max-width: 1200px; margin: 36px auto 0;
+      padding-top: 20px; border-top: 1px solid #333;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.78rem; color: #666; flex-wrap: wrap; gap: 8px;
+    }
+    .footer-bottom a { color: #888; text-decoration: none; }
+    .footer-bottom a:hover { color: var(--rouge); }
+
+    /* ── LOGO SVG ── */
+    .logo-svg { width: 48px; height: 48px; }
+
+    /* ── MOBILE NAV ── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; flex-direction: column; gap: 4px; }
+      .nav-links.open {
+        display: flex; position: absolute; top: 72px; left: 0; right: 0;
+        background: var(--blanc); padding: 16px 5%;
+        border-bottom: 2px solid var(--border);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      }
+      .hamburger { display: flex; }
+      nav { position: relative; }
+      .hero-inner, .about-inner, .contact-inner { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .formations-grid, .tarifs-grid, .pourquoi-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .about-badge-float { bottom: 10px; right: 10px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* ── SCROLL ANIMATION ── */
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="logo.png" alt="Action Secours Formation" style="height:52px; width:auto;">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#formations">Nos formations</a></li>
+      <li><a href="#tarifs">Tarifs</a></li>
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#contact" class="nav-cta">Demander un devis</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" id="accueil">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-badge">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#D0201A" opacity="0.2"/><circle cx="7" cy="7" r="4" fill="#D0201A"/></svg>
+        Formations certifiées · Île-de-France
+      </div>
+      <h1>Formez vos équipes aux <em>gestes qui sauvent</em></h1>
+      <p>Formations SST, incendie et secourisme adaptées aux réalités du terrain. Animées par un sapeur-pompier volontaire et expert en prévention des risques.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Demander un devis gratuit
+        </a>
+        <a href="#formations" class="btn btn-secondary">
+          Voir nos formations
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-cards">
+        <div class="hero-card">
+          <div class="icon">🔥</div>
+          <h3>Formation Incendie</h3>
+          <p>Extincteurs & évacuation</p>
+        </div>
+        <div class="hero-card">
+          <div class="icon">🩺</div>
+          <h3>Formation SST</h3>
+          <p>Sauveteur Secouriste du Travail</p>
+        </div>
+        <div class="hero-card">
+          <div class="icon">❤️</div>
+          <h3>Gestes qui sauvent</h3>
+          <p>Arrêt cardiaque & DAE</p>
+        </div>
+        <div class="hero-card">
+          <div class="icon">🏅</div>
+          <h3>Recyclage SST</h3>
+          <p>Maintien des compétences</p>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-box">
+          <strong>100%</strong>
+          <span>Pratique terrain</span>
+        </div>
+        <div class="stat-box">
+          <strong>Île-de-France</strong>
+          <span>Déplacement chez vous</span>
+        </div>
+        <div class="stat-box">
+          <strong>CPF</strong>
+          <span>Financement possible</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FORMATIONS ── -->
+<section class="formations" id="formations">
+  <div class="formations-inner">
+    <div class="section-header reveal">
+      <div class="section-label">Nos formations</div>
+      <h2 class="section-title">Des formations <em>concrètes</em>, adaptées à votre entreprise</h2>
+      <p class="section-sub">Toutes nos sessions se déroulent dans vos locaux, sur votre temps de travail, avec du matériel pédagogique professionnel.</p>
+    </div>
+    <div class="formations-grid">
+
+      <!-- INCENDIE -->
+      <div class="formation-card reveal reveal-delay-1">
+        <div class="formation-card-header incendie">
+          <div class="formation-icon-big">🔥</div>
+          <div>
+            <h3>Formations Incendie</h3>
+            <p>Prévenir, réagir, évacuer — ½ journée</p>
+          </div>
+        </div>
+        <div class="formation-card-body">
+          <div class="formation-item">
+            <div class="formation-item-icon rouge">🧯</div>
+            <div>
+              <h4>Manipulation des extincteurs</h4>
+              <p>Réaction face à un départ de feu, choix du moyen d'extinction adapté, mise en sécurité des personnes. Mise en pratique réelle sur feu simulé.</p>
+            </div>
+          </div>
+          <div class="formation-item">
+            <div class="formation-item-icon rouge">🚪</div>
+            <div>
+              <h4>Évacuation incendie</h4>
+              <p>Organisation de l'évacuation, rôles (guide-file, serre-file, responsable d'évacuation), consignes et conduites à tenir jusqu'à l'arrivée des secours.</p>
+            </div>
+          </div>
+        </div>
+        <div class="formation-card-footer">
+          <span class="tag rouge">⏱ ½ Journée</span>
+          <span class="tag vert">Financement possible</span>
+          <span class="tag orange">📍 En entreprise</span>
+        </div>
+      </div>
+
+      <!-- SST -->
+      <div class="formation-card reveal reveal-delay-2">
+        <div class="formation-card-header sst">
+          <div class="formation-icon-big">🩺</div>
+          <div>
+            <h3>Formations SST & Secourisme</h3>
+            <p>Intervenir, sauver, prévenir</p>
+          </div>
+        </div>
+        <div class="formation-card-body">
+          <div class="formation-item">
+            <div class="formation-item-icon bleu">🛡️</div>
+            <div>
+              <h4>SST – Sauveteur Secouriste du Travail</h4>
+              <p>Intervenir face à une situation d'accident du travail et contribuer à la prévention des risques professionnels. Formation initiale (14h) ou recyclage (7h).</p>
+            </div>
+          </div>
+          <div class="formation-item">
+            <div class="formation-item-icon bleu">❤️</div>
+            <div>
+              <h4>Gestes qui sauvent / DAE</h4>
+              <p>Alerte, gestes d'urgence et prise en charge d'un arrêt cardiaque. Utilisation du défibrillateur automatisé externe (DAE).</p>
+            </div>
+          </div>
+        </div>
+        <div class="formation-card-footer">
+          <span class="tag bleu">⏱ 14h initiale / 7h recyclage</span>
+          <span class="tag vert">Financement possible</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── TARIFS ── -->
+<section class="tarifs" id="tarifs">
+  <div class="tarifs-inner">
+    <div class="section-header center reveal">
+      <div class="section-label">Tarifs</div>
+      <h2 class="section-title">Des tarifs <em>dégressifs</em> selon le groupe</h2>
+      <p class="section-sub">Plus votre groupe est grand, plus le coût par personne diminue. Financement possible via OPCO ou CPF.</p>
+    </div>
+    <div class="tarifs-grid">
+
+      <!-- Incendie -->
+      <div class="tarif-card reveal reveal-delay-1">
+        <div class="tarif-card-head incendie">
+          <div class="tarif-icon">🔥</div>
+          <h3>Formation Incendie</h3>
+          <p>Manipulation extincteurs ou Évacuation</p>
+        </div>
+        <div class="tarif-rows">
+          <div class="tarif-row"><span class="nb">3 – 5 personnes</span><span class="prix">70 € / pers.</span></div>
+          <div class="tarif-row"><span class="nb">6 – 8 personnes</span><span class="prix">65 € / pers.</span></div>
+          <div class="tarif-row"><span class="nb">9 – 12 personnes</span><span class="prix">60 € / pers.</span></div>
+        </div>
+        <div class="tarif-financement">Financement OPCO possible</div>
+      </div>
+
+      <!-- SST Initiale -->
+      <div class="tarif-card reveal reveal-delay-2">
+        <div class="tarif-card-head sst-init">
+          <div class="tarif-icon">🛡️</div>
+          <h3>SST – Formation initiale</h3>
+          <p>14 heures de formation</p>
+        </div>
+        <div class="tarif-rows">
+          <div class="tarif-row"><span class="nb">4 – 5 personnes</span><span class="prix">170 € / pers.</span></div>
+          <div class="tarif-row"><span class="nb">6 – 8 personnes</span><span class="prix">160 € / pers.</span></div>
+          <div class="tarif-row"><span class="nb">9 – 10 personnes</span><span class="prix">150 € / pers.</span></div>
+        </div>
+        <div class="tarif-financement">Financement CPF / OPCO possible</div>
+      </div>
+
+      <!-- SST Recyclage -->
+      <div class="tarif-card reveal reveal-delay-3">
+        <div class="tarif-card-head sst-rec">
+          <div class="tarif-icon">🔄</div>
+          <h3>SST – Recyclage (MAC)</h3>
+          <p>7 heures de maintien des compétences</p>
+        </div>
+        <div class="tarif-rows">
+          <div class="tarif-row"><span class="nb">4 – 5 personnes</span><span class="prix">85 € / pers.</span></div>
+          <div class="tarif-row"><span class="nb">6 – 8 personnes</span><span class="prix">80 € / pers.</span></div>
+          <div class="tarif-row"><span class="nb">9 – 10 personnes</span><span class="prix">75 € / pers.</span></div>
+        </div>
+        <div class="tarif-financement">Financement CPF / OPCO possible</div>
+      </div>
+
+    </div>
+    <div style="text-align:center; margin-top:36px;" class="reveal">
+      <a href="#contact" class="btn btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Demander un devis personnalisé
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── POURQUOI ── -->
+<section class="pourquoi">
+  <div class="pourquoi-inner">
+    <div class="section-header center reveal">
+      <div class="section-label">Nos engagements</div>
+      <h2 class="section-title">Pourquoi choisir <em>Action Secours Formation</em> ?</h2>
+    </div>
+    <div class="pourquoi-grid">
+      <div class="pourquoi-card reveal reveal-delay-1">
+        <div class="p-icon rouge">🎯</div>
+        <h3>Pédagogie terrain</h3>
+        <p>Des formations concrètes avec des mises en situation réelles. On apprend en faisant, pas seulement en écoutant.</p>
+      </div>
+      <div class="pourquoi-card reveal reveal-delay-2">
+        <div class="p-icon vert">📋</div>
+        <h3>Conformité réglementaire</h3>
+        <p>Formations conformes au Code du Travail. Vous remplissez vos obligations légales en matière de sécurité au travail.</p>
+      </div>
+      <div class="pourquoi-card reveal reveal-delay-3">
+        <div class="p-icon orange">🚒</div>
+        <h3>Expert certifié</h3>
+        <p>Master 2 en gestion des risques, sapeur-pompier volontaire actif. Une double compétence théorique et opérationnelle rare.</p>
+      </div>
+      <div class="pourquoi-card reveal reveal-delay-1">
+        <div class="p-icon rouge">📍</div>
+        <h3>Déplacement chez vous</h3>
+        <p>Nous venons directement dans vos locaux sur toute l'Île-de-France. Zéro déplacement pour vos salariés, zéro perte de temps.</p>
+      </div>
+      <div class="pourquoi-card reveal reveal-delay-2">
+        <div class="p-icon vert">💶</div>
+        <h3>Financement facilité</h3>
+        <p>Possibilité de prise en charge par votre OPCO ou via le CPF. Nous vous accompagnons dans vos démarches de financement.</p>
+      </div>
+      <div class="pourquoi-card reveal reveal-delay-3">
+        <div class="p-icon orange">🤝</div>
+        <h3>Sur-mesure</h3>
+        <p>Chaque entreprise a ses spécificités. Les formations sont adaptées à votre secteur d'activité et à vos risques particuliers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-photo-wrap reveal">
+      <div class="about-photo-placeholder" id="photoPlaceholder">
+        <!-- Remplacez l'image ci-dessous par votre propre photo -->
+        <img src="votre-photo.png" alt="Alexis GALLOIS – Action Secours Formation">
+        <!-- <span>👤</span> -->
+        <!-- <span class="photo-hint">Votre photo ici</span> -->
+      </div>
+      <div class="about-badge-float">
+        <strong>SPV</strong>
+        <span>Sapeur-Pompier<br>Volontaire</span>
+      </div>
+    </div>
+    <div class="about-content reveal reveal-delay-2">
+      <div class="section-label">À propos</div>
+      <h2>Alexis GALLOIS — <em>Formateur expert</em> en sécurité</h2>
+      <p>Titulaire d'un Master 2 spécialisé en sécurité, gestion des risques et environnement, je mets à profit une expertise à la fois théorique, réglementaire et opérationnelle au service de la formation.</p>
+      <p>Cette complémentarité me permet de proposer des sessions pédagogiques structurées, concrètes et adaptées aux réalités du terrain ainsi qu'aux besoins opérationnels des apprenants.</p>
+      <div class="about-atouts">
+        <div class="atout">
+          <div class="atout-icon">🎓</div>
+          <div class="atout-text">
+            <strong>Master 2 – Sécurité & Gestion des risques</strong>
+            <span>Expertise réglementaire et approche structurée des risques professionnels</span>
+          </div>
+        </div>
+        <div class="atout">
+          <div class="atout-icon">🚒</div>
+          <div class="atout-text">
+            <strong>Sapeur-Pompier Volontaire actif</strong>
+            <span>Expérience terrain directe des situations d'urgence et de sauvetage</span>
+          </div>
+        </div>
+        <div class="atout">
+          <div class="atout-icon">🏢</div>
+          <div class="atout-text">
+            <strong>Expérience professionnelle en prévention</strong>
+            <span>Connaissance des contraintes et des enjeux du monde de l'entreprise</span>
+          </div>
+        </div>
+      </div>
+      <a href="#contact" class="btn btn-primary" style="display:inline-flex;">
+        Me contacter
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-info reveal">
+      <div class="section-label">Contact</div>
+      <h2>Demandez votre <em>devis gratuit</em></h2>
+      <p>Un projet de formation pour votre entreprise ? Contactez-moi directement, je vous réponds sous 24h avec une proposition adaptée à vos besoins.</p>
+      <div class="contact-tiles">
+        <a href="tel:0659038504" class="contact-tile">
+          <div class="ct-icon">📞</div>
+          <div>
+            <strong>Téléphone</strong>
+            <span>06 59 03 85 04</span>
+          </div>
+        </a>
+        <a href="mailto:action.secours.formation@gmail.com" class="contact-tile">
+          <div class="ct-icon">✉️</div>
+          <div>
+            <strong>Email</strong>
+            <span>action.secours.formation@gmail.com</span>
+          </div>
+        </a>
+        <div class="contact-tile">
+          <div class="ct-icon">📍</div>
+          <div>
+            <strong>Zone d'intervention</strong>
+            <span>Île-de-France (Essonne, Val-de-Marne, Seine-et-Marne…)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form-wrap reveal reveal-delay-2">
+      <h3>📋 Formulaire de contact / devis</h3>
+      <div id="formSuccess" class="form-success">
+        Merci ! Votre message a bien été envoyé. Je vous répondrai sous 24h.
+      </div>
+      <form id="contactForm" action="https://formspree.io/f/xwvajrqj" method="POST" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="prenom">Prénom *</label>
+            <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+          </div>
+          <div class="form-group">
+            <label for="nom">Nom *</label>
+            <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="entreprise">Entreprise</label>
+          <input type="text" id="entreprise" name="entreprise" placeholder="Nom de votre entreprise">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="votre@email.fr" required>
+          </div>
+          <div class="form-group">
+            <label for="telephone">Téléphone</label>
+            <input type="tel" id="telephone" name="telephone" placeholder="06 XX XX XX XX">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="formation">Formation souhaitée *</label>
+          <select id="formation" name="formation" required>
+            <option value="">— Choisissez une formation —</option>
+            <option value="extincteurs">Formation Incendie – Manipulation extincteurs</option>
+            <option value="evacuation">Formation Incendie – Évacuation</option>
+            <option value="sst-initiale">SST – Formation initiale (14h)</option>
+            <option value="sst-recyclage">SST – Recyclage / MAC (7h)</option>
+            <option value="dae">Gestes qui sauvent / DAE</option>
+            <option value="plusieurs">Plusieurs formations</option>
+            <option value="autre">Autre / Je ne sais pas encore</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="nb_personnes">Nombre de participants estimé</label>
+          <select id="nb_personnes" name="nb_personnes">
+            <option value="">— Sélectionnez —</option>
+            <option value="3-5">3 – 5 personnes</option>
+            <option value="6-8">6 – 8 personnes</option>
+            <option value="9-12">9 – 12 personnes</option>
+            <option value="12+">Plus de 12 personnes</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message / précisions</label>
+          <textarea id="message" name="message" placeholder="Décrivez votre besoin, vos contraintes de dates, votre secteur d'activité…"></textarea>
+        </div>
+        <button type="submit" class="form-submit">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Envoyer ma demande
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#" style="display:inline-flex; margin-bottom:14px;">
+        <img src="logo.png" alt="Action Secours Formation" style="height:60px; width:auto;">
+      </a>
+      <p>Organisme de formation spécialisé en SST et sécurité incendie en Île-de-France. Formateur certifié, sapeur-pompier volontaire.</p>
+    </div>
+    <div>
+      <h4>Formations</h4>
+      <ul>
+        <li><a href="#formations">Manipulation extincteurs</a></li>
+        <li><a href="#formations">Évacuation incendie</a></li>
+        <li><a href="#formations">SST – Formation initiale</a></li>
+        <li><a href="#formations">SST – Recyclage</a></li>
+        <li><a href="#formations">Gestes qui sauvent / DAE</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:0659038504">📞 06 59 03 85 04</a></li>
+        <li><a href="mailto:action.secours.formation@gmail.com">✉️ action.secours.formation@gmail.com</a></li>
+        <li><a href="#contact">📋 Formulaire de contact</a></li>
+        <li><a href="#about">👤 À propos</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Action Secours Formation – Alexis GALLOIS</span>
+    <span>Île-de-France · Essonne · Val-de-Marne · Seine-et-Marne</span>
+  </div>
+</footer>
+
+<script>
+  // ── Mobile menu ──
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  // Close menu on link click
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+  });
+
+  // ── Scroll reveal ──
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // ── Form submit via Formspree ──
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('.form-submit');
+    btn.textContent = 'Envoi en cours…';
+    btn.disabled = true;
+
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.style.display = 'none';
+        document.getElementById('formSuccess').classList.add('visible');
+      } else {
+        btn.textContent = 'Erreur — réessayez';
+        btn.disabled = false;
+      }
+    } catch (err) {
+      btn.textContent = 'Erreur réseau — réessayez';
+      btn.disabled = false;
+    }
+  }
+
+  // ── Sticky nav shadow ──
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('nav');
+    nav.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(0,0,0,0.08)' : 'none';
+  });
+</script>
+</body>
+</html>
