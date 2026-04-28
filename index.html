@@ -6,7 +6,7 @@
 
   <!-- ══ SEO ESSENTIEL ══ -->
   <title>Formation SST & Incendie Île-de-France | Action Secours Formation – Alexis Gallois</title>
-  <meta name="description" content="Formations SST (Sauveteur Secouriste du Travail), manipulation extincteurs et évacuation incendie en Île-de-France. Formateur certifié INRS, sapeur-pompier volontaire. Déplacement en entreprise. Devis gratuit sous 24h."/>
+  <meta name="description" content="Formations SST (Sauveteur Secouriste du Travail), manipulation extincteurs et évacuation incendie. Basé en Île-de-France, disponible partout en France sur demande. Formateur certifié INRS, sapeur-pompier volontaire. Devis gratuit sous 24h."/>
   <meta name="keywords" content="formation SST Essonne, formation SST Île-de-France, sauveteur secouriste du travail, manipulation extincteurs entreprise, évacuation incendie, formation secourisme entreprise, recyclage SST MAC, gestes qui sauvent DAE, formation sécurité incendie Seine-et-Marne, OPCO formation SST"/>
   <meta name="author" content="Alexis Gallois – Action Secours Formation"/>
   <meta name="robots" content="index, follow"/>
@@ -15,7 +15,7 @@
   <!-- ══ OPEN GRAPH (partage réseaux sociaux) ══ -->
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="Formation SST & Incendie en Île-de-France | Action Secours Formation"/>
-  <meta property="og:description" content="Formations SST, extincteurs, évacuation incendie. Formateur certifié INRS & sapeur-pompier volontaire. Intervention en entreprise partout en Île-de-France. Devis gratuit."/>
+  <meta property="og:description" content="Formations SST, extincteurs, évacuation incendie. Formateur certifié INRS & sapeur-pompier volontaire. Basé en Île-de-France, déplacement partout en France sur demande. Devis gratuit."/>
   <meta property="og:url" content="https://www.action-secours-formation.fr/"/>
   <meta property="og:image" content="https://www.action-secours-formation.fr/logo.png"/>
   <meta property="og:locale" content="fr_FR"/>
@@ -37,7 +37,7 @@
         "@id": "https://www.action-secours-formation.fr/#business",
         "name": "Action Secours Formation",
         "alternateName": "Action Secours Formation – Alexis Gallois",
-        "description": "Organisme de formation spécialisé en SST (Sauveteur Secouriste du Travail) et sécurité incendie en Île-de-France. Formateur certifié INRS, sapeur-pompier volontaire, Master 2 gestion des risques.",
+        "description": "Organisme de formation spécialisé en SST (Sauveteur Secouriste du Travail) et sécurité incendie, basé en Île-de-France. Formateur certifié INRS, sapeur-pompier volontaire, Master 2 gestion des risques. Déplacement partout en France sur demande.",
         "url": "https://www.action-secours-formation.fr/",
         "logo": "https://www.action-secours-formation.fr/logo.png",
         "image": "https://www.action-secours-formation.fr/logo.png",
@@ -264,6 +264,10 @@
       width: 4px; background: var(--rouge);
       border-radius: 2px 0 0 2px;
     }
+    .hero-geo {
+      font-size: 0.88rem; font-weight: 500; color: var(--gris);
+      margin-bottom: 22px; margin-top: -10px;
+    }
     .accroche-text {
       font-size: 0.97rem;
       font-weight: 600;
@@ -271,13 +275,13 @@
       color: #f0f0f0;
       padding-left: 12px;
       opacity: 0;
-      transform: translateY(8px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
+      transform: translateX(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
       position: absolute;
     }
     .accroche-text.active {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateX(0);
       position: relative;
     }
     .accroche-dots {
@@ -306,7 +310,7 @@
 
     /* Stats héro */
     .hero-visual { display: flex; flex-direction: column; gap: 16px; }
-    .hero-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .hero-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
     .hero-card {
       background: var(--blanc); border-radius: var(--radius); padding: 22px 18px;
       box-shadow: var(--shadow); border: 1.5px solid var(--border);
@@ -750,6 +754,10 @@
   <div class="nav-inner">
     <a href="#" class="nav-logo" aria-label="Action Secours Formation – Retour à l'accueil">
       <img src="logo.png" alt="Logo Action Secours Formation" width="52" height="52" style="height:52px; width:auto;">
+      <div class="nav-logo-text">
+        <strong>Action Secours Formation</strong>
+        <span>Formateur certifié · Île-de-France</span>
+      </div>
     </a>
     <ul class="nav-links" id="navLinks" role="menubar">
       <li role="none"><a href="#formations" role="menuitem">Nos formations</a></li>
@@ -771,9 +779,10 @@
     <div class="hero-text">
       <div class="hero-badge">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#D0201A" opacity="0.2"/><circle cx="7" cy="7" r="4" fill="#D0201A"/></svg>
-        Formations certifiées · Île-de-France
+        Formations certifiées · Île-de-France &amp; toute la France
       </div>
-      <h1>Formez vos équipes aux <em>gestes qui sauvent</em> en Île-de-France</h1>
+      <h1>Formez vos équipes aux <em>gestes qui sauvent</em></h1>
+      <p class="hero-geo">📍 Basé en Île-de-France · disponible partout en France sur demande</p>
 
       <!-- Accroches rotatives -->
       <div class="hero-accroche" id="accrocheBox">
@@ -794,15 +803,10 @@
     </div>
     <div class="hero-visual">
       <div class="hero-cards">
-        <div class="hero-card" onclick="openFormation('extincteurs')">
-          <div class="icon">🧯</div>
-          <h3>Manipulation extincteurs</h3>
-          <p>Réagir face à un départ de feu</p>
-        </div>
-        <div class="hero-card" onclick="openFormation('evacuation')">
-          <div class="icon">🚪</div>
-          <h3>Évacuation incendie</h3>
-          <p>Organiser et sécuriser l'évacuation</p>
+        <div class="hero-card" onclick="openFormation('incendie-commun')" style="grid-column: span 1;">
+          <div class="icon">🔥</div>
+          <h3>Formation Incendie complète</h3>
+          <p>Manipulation extincteurs + Évacuation incendie</p>
         </div>
         <div class="hero-card" onclick="openFormation('sst')">
           <div class="icon">🩺</div>
@@ -817,13 +821,14 @@
       </div>
       <div class="hero-stats">
         <div class="stat-box">
-          <span>Pratique</span>
-          <strong>100%</strong>
-          <span>terrain</span>
+          <span>Pédagogie</span>
+          <strong>Pratique<br>avant tout</strong>
+          <span>théorie au service de l'action</span>
         </div>
         <div class="stat-box">
-          <span>Déplacement chez vous</span>
-          <strong>Partout<br>en France</strong>
+          <span>Basé en Île-de-France</span>
+          <strong>Mobile<br>France entière</strong>
+          <span>sur demande</span>
         </div>
         <div class="stat-box">
           <span>Financement</span>
@@ -863,13 +868,13 @@
     <div class="section-header reveal">
       <div class="section-label">Nos formations</div>
       <h2 class="section-title">Des formations <em>concrètes</em>, adaptées à votre entreprise</h2>
-      <p class="section-sub">Nos formations sont conçues pour s’intégrer à votre quotidien : nous intervenons sur votre lieu de travail avec notre propre équipement professionnel. Si vos espaces ne le permettent pas, nous pouvons également prendre en charge la réservation de salles adaptées à proximité.</p>
+      <p class="section-sub">Nos formations sont conçues pour s’intégrer à votre quotidien : nous intervenons sur votre lieu de travail avec notre propre équipement professionnel. Basé en Île-de-France, je me déplace également partout en France sur demande. Si vos espaces ne le permettent pas, nous pouvons également prendre en charge la réservation de salles adaptées à proximité.</p>
     </div>
     <div class="formations-grid">
 
       <!-- INCENDIE -->
       <div class="formation-card reveal reveal-delay-1">
-        <div class="formation-card-header incendie" onclick="openFormation('incendie-general')">
+        <div class="formation-card-header incendie" onclick="openFormation('incendie-commun')">
           <div class="formation-icon-big">🔥</div>
           <div>
             <h3>Formations Incendie</h3>
@@ -901,8 +906,7 @@
               <span class="tag orange">📍 En entreprise</span>
             </div>
             <div style="display:flex;gap:8px;flex-wrap:wrap;">
-              <button class="btn-detail" onclick="openFormation('extincteurs')">Extincteurs →</button>
-              <button class="btn-detail" onclick="openFormation('evacuation')">Évacuation →</button>
+              <button class="btn-detail" onclick="openFormation('incendie-commun')">Voir la formation →</button>
             </div>
           </div>
         </div>
@@ -965,7 +969,7 @@
         <div class="tarif-card-head incendie">
           <div class="tarif-icon">🔥</div>
           <h3>Formation Incendie</h3>
-          <p>Manipulation extincteurs ou Évacuation</p>
+          <p>Manipulation extincteurs & Évacuation</p>
         </div>
         <div class="tarif-rows">
           <div class="tarif-row"><span class="nb">3 – 5 personnes</span><span class="prix">70 € / pers.</span></div>
@@ -1020,8 +1024,8 @@
     <div class="pourquoi-grid">
       <div class="pourquoi-card reveal reveal-delay-1">
         <div class="p-icon rouge">🎯</div>
-        <h3>Pédagogie terrain</h3>
-        <p>Des formations concrètes avec des mises en situation réelles. On apprend en faisant, pas seulement en écoutant.</p>
+        <h3>Pédagogie pratique</h3>
+        <p>Des formations qui allient apports théoriques ciblés et mises en situation concrètes. L'essentiel est mis sur le faire : on comprend pour mieux agir.</p>
       </div>
       <div class="pourquoi-card reveal reveal-delay-2">
         <div class="p-icon vert">📋</div>
@@ -1036,7 +1040,7 @@
       <div class="pourquoi-card reveal reveal-delay-1">
         <div class="p-icon rouge">📍</div>
         <h3>Déplacement chez vous</h3>
-        <p>Nous venons directement dans vos locaux sur toute l'Île-de-France. Zéro déplacement pour vos salariés, zéro perte de temps.</p>
+        <p>Basé en Île-de-France, je me déplace directement dans vos locaux. Intervention possible partout en France sur demande. Zéro déplacement pour vos salariés, zéro perte de temps.</p>
       </div>
       <div class="pourquoi-card reveal reveal-delay-2">
         <div class="p-icon vert">💶</div>
@@ -1069,6 +1073,7 @@
       <h2>Alexis GALLOIS — <em>Formateur expert</em> en sécurité</h2>
       <p>Titulaire d'un Master 2 spécialisé en sécurité, gestion des risques et environnement, je mets à profit une expertise à la fois théorique, réglementaire et opérationnelle au service de la formation.</p>
       <p>Cette complémentarité me permet de proposer des sessions pédagogiques structurées, concrètes et adaptées aux réalités du terrain ainsi qu'aux besoins opérationnels des apprenants.</p>
+      <p style="font-style:italic; color:var(--rouge); font-weight:600;">Jeune, dynamique et passionné par la sécurité — je m'engage à rendre chaque formation aussi efficace qu'agréable.</p>
       <div class="about-atouts">
         <div class="atout">
           <div class="atout-icon">🎓</div>
@@ -1209,7 +1214,7 @@
           <span style="color:var(--rouge);font-size:1.2rem;flex-shrink:0;margin-left:12px;">+</span>
         </summary>
         <div style="padding:0 24px 20px;color:var(--gris);font-size:0.92rem;line-height:1.65;">
-          Action Secours Formation propose des <strong>formations SST</strong> (initiale 14h et recyclage MAC 7h, certifiantes INRS), des formations incendie (<strong>manipulation extincteurs</strong> et <strong>évacuation incendie</strong>, ½ journée), ainsi que des sensibilisations aux <strong>gestes qui sauvent et au DAE</strong>. Toutes les formations se déroulent directement dans vos locaux en Île-de-France.
+          Action Secours Formation propose des <strong>formations SST</strong> (initiale 14h et recyclage MAC 7h, certifiantes INRS), des formations incendie (<strong>manipulation extincteurs</strong> et <strong>évacuation incendie</strong>, ½ journée), ainsi que des sensibilisations aux <strong>gestes qui sauvent et au DAE</strong>. Basé en Île-de-France, les formations se déroulent directement dans vos locaux — et je me déplace partout en France sur demande.
         </div>
       </details>
       <details class="faq-item reveal reveal-delay-1" style="background:var(--blanc);border-radius:var(--radius);border:1.5px solid var(--border);box-shadow:var(--shadow);overflow:hidden;">
@@ -1261,7 +1266,7 @@
       <a href="#" style="display:inline-flex; margin-bottom:14px;">
         <img src="logo.png" alt="Action Secours Formation" style="height:60px; width:auto;">
       </a>
-      <p>Organisme de formation spécialisé en SST et sécurité incendie en Île-de-France. Formateur certifié, sapeur-pompier volontaire.</p>
+      <p>Organisme de formation spécialisé en SST et sécurité incendie, basé en Île-de-France. Formateur certifié, sapeur-pompier volontaire. Déplacement possible partout en France sur demande.</p>
     </div>
     <div>
       <h4>Formations</h4>
@@ -1293,6 +1298,101 @@
 <!-- ══════════════════════════════════════════════ -->
 <!--  PAGES DE FORMATION (overlays)                -->
 <!-- ══════════════════════════════════════════════ -->
+
+<!-- PAGE : Formation Incendie complète (extincteurs + évacuation) -->
+<div class="formation-overlay" id="overlay-incendie-commun">
+  <div class="formation-page">
+    <div class="fp-header incendie">
+      <button class="fp-close" onclick="closeFormation('incendie-commun')">✕</button>
+      <div class="fp-breadcrumb">
+        <a onclick="closeFormation('incendie-commun')">Accueil</a>
+        <span>/</span>
+        <a onclick="closeFormation('incendie-commun')">Nos formations</a>
+        <span>/</span>
+        <span>Formation Incendie complète</span>
+      </div>
+      <span class="fp-emoji">🔥</span>
+      <h2>Formation Incendie — Manipulation extincteurs & Évacuation</h2>
+      <p class="fp-desc">Une formation complète en demi-journée pour préparer vos équipes à réagir face à un incendie : maîtriser un extincteur, organiser une évacuation et connaître le rôle de chacun. Pratique, concret, sur votre lieu de travail.</p>
+    </div>
+    <div class="fp-body">
+      <div class="fp-grid">
+        <div class="fp-bloc">
+          <h4>Module 1 — Extincteurs</h4>
+          <ul>
+            <li>Triangle du feu et classes de feux</li>
+            <li>Types d'extincteurs et agents extincteurs</li>
+            <li>Technique d'utilisation en sécurité</li>
+            <li>Exercice pratique sur feu réel simulé</li>
+            <li>Conduite à tenir jusqu'aux secours</li>
+          </ul>
+        </div>
+        <div class="fp-bloc">
+          <h4>Module 2 — Évacuation</h4>
+          <ul>
+            <li>Réglementation incendie en entreprise</li>
+            <li>Rôles : guide-file, serre-file, responsable</li>
+            <li>Procédure d'alerte et de confinement</li>
+            <li>Gestion du point de rassemblement</li>
+            <li>Exercice d'évacuation pratique</li>
+          </ul>
+        </div>
+        <div class="fp-bloc">
+          <h4>Public & conditions</h4>
+          <p>Tout collaborateur d'entreprise, sans prérequis. Groupes de <strong>3 à 12 participants</strong>. Accessible aux travailleurs handicapés sous réserve d'aptitude médicale.</p>
+        </div>
+        <div class="fp-bloc">
+          <h4>Accompagnement</h4>
+          <ul>
+            <li>Formateur certifié, sapeur-pompier volontaire</li>
+            <li>Matériel pédagogique professionnel fourni</li>
+            <li>Compte-rendu d'exercice d'évacuation</li>
+          </ul>
+        </div>
+        <div class="fp-bloc">
+          <h4>Documents délivrés</h4>
+          <ul>
+            <li>Attestation de formation</li>
+            <li>Feuille d'émargement</li>
+            <li>Certificat de réalisation</li>
+            <li>Compte-rendu d'exercice</li>
+          </ul>
+        </div>
+        <div class="fp-bloc">
+          <h4>Financement</h4>
+          <ul>
+            <li>Financement OPCO possible</li>
+            <li>Devis personnalisé sur demande</li>
+            <li>Accompagnement dans vos démarches</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fp-competences">
+        <h4>Ce que vos équipes sauront faire</h4>
+        <div class="fp-competences-list">
+          <div class="fp-comp-item">Identifier la classe du feu et choisir l'extincteur adapté</div>
+          <div class="fp-comp-item">Utiliser un extincteur avec la bonne technique</div>
+          <div class="fp-comp-item">Donner l'alerte efficacement</div>
+          <div class="fp-comp-item">Connaître son rôle en cas d'évacuation</div>
+          <div class="fp-comp-item">Guider les personnes vers les sorties de secours</div>
+          <div class="fp-comp-item">Gérer le point de rassemblement et accueillir les secours</div>
+        </div>
+      </div>
+
+      <div class="fp-tags">
+        <span class="tag rouge">⏱ ½ journée (~3h)</span>
+        <span class="tag orange">📍 Dans vos locaux</span>
+        <span class="tag vert">✅ Financement OPCO possible</span>
+        <span class="tag bleu">👥 3 à 12 participants</span>
+      </div>
+    </div>
+    <div class="fp-footer">
+      <p><strong>En cas d'incendie, la panique tue. La formation sauve.</strong><br>Investissez dans la sécurité de vos équipes dès aujourd'hui.</p>
+      <a href="#contact" class="btn btn-primary" onclick="closeFormation('incendie-commun')">Demander un devis →</a>
+    </div>
+  </div>
+</div>
 
 <!-- PAGE : Manipulation extincteurs -->
 <div class="formation-overlay" id="overlay-extincteurs">
@@ -1332,14 +1432,13 @@
         </div>
         <div class="fp-bloc">
           <h4>Conditions d'accès</h4>
-          <p>Accessible aux travailleurs handicapés sous réserve d'aptitude médicale. Session de 4 à 12 participants. Une pièce d'identité sera demandée.</p>
+          <p>Accessible aux travailleurs handicapés sous réserve d'aptitude médicale. Session de 3 à 12 participants.</p>
         </div>
         <div class="fp-bloc">
           <h4>Accompagnement</h4>
           <ul>
             <li>Formateur certifié, sapeur-pompier volontaire</li>
             <li>Matériel pédagogique professionnel fourni</li>
-            <li>Suivi post-formation disponible</li>
           </ul>
         </div>
         <div class="fp-bloc">
@@ -1490,7 +1589,7 @@
         </div>
         <div class="fp-bloc">
           <h4>Pré-requis</h4>
-          <p>Aucun prérequis. Pour garantir la qualité des mises en situation, chaque session se déroule avec un groupe de <strong>4 à 10 participants</strong>. Une pièce d'identité sera demandée.</p>
+          <p>Aucun prérequis. Pour garantir la qualité des mises en situation, chaque session se déroule avec un groupe de <strong>4 à 10 participants</strong>.</p>
         </div>
         <div class="fp-bloc">
           <h4>Contenu</h4>
@@ -1579,7 +1678,7 @@
         </div>
         <div class="fp-bloc">
           <h4>Pré-requis</h4>
-          <p>Avoir suivi une formation SST initiale. Chaque session se déroule avec <strong>4 à 10 participants</strong>. Une pièce d'identité et le certificat SST seront demandés.</p>
+          <p>Avoir suivi une formation SST initiale. Chaque session se déroule avec <strong>4 à 10 participants</strong>.</p>
         </div>
         <div class="fp-bloc">
           <h4>Contenu</h4>
@@ -1966,12 +2065,12 @@
       document.querySelectorAll('.accroche-dot').forEach((d, i) => {
         d.classList.toggle('active', i === idx);
       });
-    }, 400);
+    }, 600);
   }
 
   setInterval(() => {
     goToAccroche((currentAccroche + 1) % accroches.length);
-  }, 4000);
+  }, 6000);
 
   // ── Pages de formation (overlays) ──
   function openFormation(id) {
