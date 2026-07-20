@@ -277,3 +277,317 @@ document.addEventListener('DOMContentLoaded', () => {
   createDots();
   updateSlider();
 });
+/* ═══════════════════════════════════════
+   CARROUSEL INFINI DES AVIS GOOGLE
+════════════════════════════════════════ */
+
+document.addEventListener('DOMContentLoaded', () => {
+  const carousel = document.querySelector(
+    '.google-reviews-carousel'
+  );
+
+  if (!carousel) {
+    return;
+  }
+
+  const track = carousel.querySelector(
+    '.google-carousel-track'
+  );
+
+  const windowElement = carousel.querySelector(
+    '.google-carousel-window'
+  );
+
+  const previousButton = carousel.querySelector(
+    '.google-carousel-prev'
+  );
+
+  const nextButton = carousel.querySelector(
+    '.google-carousel-next'
+  );
+
+  const dotsContainer = document.querySelector(
+    '.google-carousel-dots'
+  );
+
+  if (
+    !track ||
+    !windowElement ||
+    !previousButton ||
+    !nextButton ||
+    !dotsContainer
+  ) {
+    return;
+  }
+
+  const originalCards = Array.from(
+    track.querySelectorAll('.google-review-card')
+  );
+
+  if (originalCards.length === 0) {
+    return;
+  }
+
+  let visibleCards = getVisibleCards();
+  let currentIndex = visibleCards;
+  let isMoving = false;
+  let autoplayTimer = null;
+  let resizeTimer = null;
+
+  const transitionDuration = 500;
+  const autoplayDelay = 4000;
+
+  function getVisibleCards() {
+    if (window.innerWidth <= 650) {
+      return 1;
+    }
+
+    if (window.innerWidth <= 900) {
+      return 2;
+    }
+
+    return 3;
+  }
+
+  function createInfiniteTrack() {
+    track.innerHTML = '';
+
+    const cardsAtStart = originalCards.slice(
+      -visibleCards
+    );
+
+    const cardsAtEnd = originalCards.slice(
+      0,
+      visibleCards
+    );
+
+    cardsAtStart.forEach((card) => {
+      const clone = card.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    });
+
+    originalCards.forEach((card) => {
+      track.appendChild(card);
+    });
+
+    cardsAtEnd.forEach((card) => {
+      const clone = card.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    });
+
+    currentIndex = visibleCards;
+
+    requestAnimationFrame(() => {
+      moveTrack(false);
+    });
+  }
+
+  function getCardWidth() {
+    const firstCard = track.querySelector(
+      '.google-review-card'
+    );
+
+    if (!firstCard) {
+      return 0;
+    }
+
+    return firstCard.getBoundingClientRect().width;
+  }
+
+  function getGap() {
+    const trackStyle = window.getComputedStyle(track);
+
+    return (
+      parseFloat(trackStyle.columnGap) ||
+      parseFloat(trackStyle.gap) ||
+      0
+    );
+  }
+
+  function moveTrack(animate = true) {
+    const cardWidth = getCardWidth();
+    const gap = getGap();
+
+    track.style.transition = animate
+      ? `transform ${transitionDuration}ms ease`
+      : 'none';
+
+    const movement =
+      currentIndex * (cardWidth + gap);
+
+    track.style.transform =
+      `translateX(-${movement}px)`;
+
+    updateDots();
+  }
+
+  function getRealIndex() {
+    const total = originalCards.length;
+
+    return (
+      (currentIndex - visibleCards + total) %
+      total
+    );
+  }
+
+  function createDots() {
+    dotsContainer.innerHTML = '';
+
+    originalCards.forEach((card, index) => {
+      const dot = document.createElement('button');
+
+      dot.type = 'button';
+      dot.className = 'google-carousel-dot';
+
+      dot.setAttribute(
+        'aria-label',
+        `Afficher l’avis ${index + 1}`
+      );
+
+      dot.addEventListener('click', () => {
+        if (isMoving) {
+          return;
+        }
+
+        currentIndex = visibleCards + index;
+        isMoving = true;
+        moveTrack(true);
+        restartAutoplay();
+      });
+
+      dotsContainer.appendChild(dot);
+    });
+
+    updateDots();
+  }
+
+  function updateDots() {
+    const realIndex = getRealIndex();
+
+    const dots = dotsContainer.querySelectorAll(
+      '.google-carousel-dot'
+    );
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle(
+        'active',
+        index === realIndex
+      );
+    });
+  }
+
+  function goNext() {
+    if (isMoving) {
+      return;
+    }
+
+    isMoving = true;
+    currentIndex += 1;
+    moveTrack(true);
+  }
+
+  function goPrevious() {
+    if (isMoving) {
+      return;
+    }
+
+    isMoving = true;
+    currentIndex -= 1;
+    moveTrack(true);
+  }
+
+  function correctInfinitePosition() {
+    const total = originalCards.length;
+
+    if (currentIndex >= total + visibleCards) {
+      currentIndex = visibleCards;
+      moveTrack(false);
+    }
+
+    if (currentIndex < visibleCards) {
+      currentIndex = total + visibleCards - 1;
+      moveTrack(false);
+    }
+
+    isMoving = false;
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+
+    autoplayTimer = window.setInterval(() => {
+      goNext();
+    }, autoplayDelay);
+  }
+
+  function stopAutoplay() {
+    if (autoplayTimer) {
+      window.clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+  }
+
+  function restartAutoplay() {
+    stopAutoplay();
+    startAutoplay();
+  }
+
+  nextButton.addEventListener('click', () => {
+    goNext();
+    restartAutoplay();
+  });
+
+  previousButton.addEventListener('click', () => {
+    goPrevious();
+    restartAutoplay();
+  });
+
+  track.addEventListener(
+    'transitionend',
+    correctInfinitePosition
+  );
+
+  carousel.addEventListener('mouseenter', stopAutoplay);
+  carousel.addEventListener('mouseleave', startAutoplay);
+
+  carousel.addEventListener('focusin', stopAutoplay);
+  carousel.addEventListener('focusout', startAutoplay);
+
+  carousel.addEventListener('touchstart', stopAutoplay, {
+    passive: true
+  });
+
+  carousel.addEventListener('touchend', startAutoplay, {
+    passive: true
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      stopAutoplay();
+    } else {
+      startAutoplay();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    window.clearTimeout(resizeTimer);
+
+    resizeTimer = window.setTimeout(() => {
+      const newVisibleCards = getVisibleCards();
+
+      if (newVisibleCards !== visibleCards) {
+        visibleCards = newVisibleCards;
+        createInfiniteTrack();
+        createDots();
+      } else {
+        moveTrack(false);
+      }
+    }, 150);
+  });
+
+  createInfiniteTrack();
+  createDots();
+  startAutoplay();
+});
