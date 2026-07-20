@@ -222,3 +222,293 @@ footer ul a:hover { color: var(--rouge); }
   .form-row { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; }
 }
+/* ═══════════════════════════════════════
+   AVIS GOOGLE
+   ═══════════════════════════════════════ */
+
+.google-reviews-section {
+  padding: 90px 5%;
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      var(--rouge-light) 50%,
+      #ffffff 100%
+    );
+  overflow: hidden;
+}
+
+.google-reviews-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.google-global-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.google-word {
+  color: var(--noir);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.google-global-stars {
+  color: #fbbc04;
+  font-size: 1.55rem;
+  line-height: 1;
+  letter-spacing: 2px;
+}
+
+.google-global-rating strong {
+  padding: 5px 11px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  background: var(--blanc);
+  color: var(--noir);
+  font-size: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.google-reviews-slider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.google-reviews-window {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.google-reviews-track {
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+  width: 100%;
+  transition: transform 0.45s ease;
+  will-change: transform;
+}
+
+.google-review-card {
+  flex: 0 0 calc((100% - 48px) / 3);
+  min-width: 0;
+  padding: 28px;
+  border: 1.5px solid var(--border);
+  border-radius: 18px;
+  background: var(--blanc);
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+.google-review-profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.google-review-profile h3 {
+  margin: 0;
+  color: var(--noir);
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.google-review-avatar {
+  display: flex;
+  flex: 0 0 50px;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: var(--blanc);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.avatar-grey {
+  background: #455a64;
+}
+
+.avatar-red {
+  background: #f4511e;
+}
+
+.avatar-pink {
+  background: #ec407a;
+}
+
+.avatar-purple {
+  background: #7e57c2;
+}
+
+.avatar-orange {
+  background: #ef6c00;
+}
+
+.google-review-stars {
+  margin-bottom: 16px;
+  color: #fbbc04;
+  font-size: 1.3rem;
+  line-height: 1;
+  letter-spacing: 2px;
+}
+
+.google-review-card p {
+  margin: 0 0 14px;
+  color: var(--gris);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.google-review-card p:last-child {
+  margin-bottom: 0;
+}
+
+.google-review-arrow {
+  display: flex;
+  flex: 0 0 48px;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--rouge);
+  color: var(--blanc);
+  font-family: inherit;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(208, 32, 26, 0.25);
+  transition:
+    background 0.2s,
+    transform 0.2s,
+    opacity 0.2s;
+}
+
+.google-review-arrow:hover {
+  background: var(--rouge-hover);
+  transform: scale(1.06);
+}
+
+.google-review-arrow:disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+  transform: none;
+}
+
+.google-reviews-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 12px;
+  margin-top: 26px;
+}
+
+.google-review-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #c7c7c7;
+  cursor: pointer;
+  transition:
+    width 0.2s,
+    background 0.2s;
+}
+
+.google-review-dot.active {
+  width: 28px;
+  border-radius: 10px;
+  background: var(--rouge);
+}
+
+.google-reviews-button-wrapper {
+  margin-top: 34px;
+  text-align: center;
+}
+
+/* Tablette */
+
+@media (max-width: 900px) {
+  .google-review-card {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+}
+
+/* Téléphone */
+
+@media (max-width: 650px) {
+  .google-reviews-section {
+    padding: 65px 12px;
+  }
+
+  .google-reviews-slider {
+    gap: 6px;
+  }
+
+  .google-reviews-track {
+    gap: 16px;
+  }
+
+  .google-review-card {
+    flex-basis: 100%;
+    padding: 22px;
+  }
+
+  .google-review-arrow {
+    flex-basis: 36px;
+    width: 36px;
+    height: 36px;
+    font-size: 1.5rem;
+  }
+
+  .google-global-rating {
+    gap: 7px;
+  }
+
+  .google-word {
+    width: 100%;
+    text-align: center;
+  }
+
+  .google-global-stars {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .google-reviews-section {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .google-reviews-slider {
+    gap: 3px;
+  }
+
+  .google-review-card {
+    padding: 18px;
+  }
+
+  .google-review-arrow {
+    flex-basis: 32px;
+    width: 32px;
+    height: 32px;
+    font-size: 1.3rem;
+  }
+}
