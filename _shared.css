@@ -512,3 +512,363 @@ footer ul a:hover { color: var(--rouge); }
     font-size: 1.3rem;
   }
 }
+/* ═══════════════════════════════════════
+   AVIS GOOGLE – CARROUSEL INFINI
+════════════════════════════════════════ */
+
+.google-reviews-section {
+  padding: 90px 5%;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      var(--rouge-light) 50%,
+      #ffffff 100%
+    );
+}
+
+.google-reviews-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Note générale */
+
+.google-global-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.google-name {
+  color: var(--noir);
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.google-global-stars {
+  color: #fbbc04;
+  font-size: 1.6rem;
+  line-height: 1;
+  letter-spacing: 2px;
+}
+
+.google-global-rating strong {
+  padding: 5px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  background: var(--blanc);
+  color: var(--noir);
+  font-size: 1rem;
+  box-shadow: var(--shadow);
+}
+
+/* Carrousel */
+
+.google-reviews-carousel {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.google-carousel-window {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.google-carousel-track {
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+  will-change: transform;
+}
+
+/* Cartes */
+
+.google-review-card {
+  flex: 0 0 calc((100% - 48px) / 3);
+  min-width: 0;
+  min-height: 300px;
+  padding: 28px;
+  border: 1.5px solid var(--border);
+  border-radius: 18px;
+  background: var(--blanc);
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+.google-review-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.google-review-header h3 {
+  margin: 0;
+  color: var(--noir);
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.google-review-avatar {
+  display: flex;
+  flex: 0 0 50px;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: var(--blanc);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.avatar-grey {
+  background: #455a64;
+}
+
+.avatar-red {
+  background: #f4511e;
+}
+
+.avatar-pink {
+  background: #ec407a;
+}
+
+.avatar-purple {
+  background: #7e57c2;
+}
+
+.avatar-orange {
+  background: #ef6c00;
+}
+
+.avatar-blue {
+  background: #4285f4;
+}
+
+.avatar-dark-red {
+  background: #c9340d;
+}
+
+.avatar-green {
+  background: #a8bd39;
+}
+
+.google-review-stars {
+  margin-bottom: 17px;
+  color: #fbbc04;
+  font-size: 1.35rem;
+  line-height: 1;
+  letter-spacing: 2px;
+}
+
+.google-review-card p {
+  margin: 0 0 14px;
+  color: var(--gris);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.google-review-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Flèches */
+
+.google-carousel-arrow {
+  display: flex;
+  flex: 0 0 48px;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--rouge);
+  color: var(--blanc);
+  font-family: inherit;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(208, 32, 26, 0.25);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.google-carousel-arrow:hover {
+  background: var(--rouge-hover);
+  transform: scale(1.06);
+}
+
+.google-carousel-arrow:focus-visible {
+  outline: 3px solid rgba(208, 32, 26, 0.25);
+  outline-offset: 3px;
+}
+
+/* Points */
+
+.google-carousel-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 12px;
+  margin-top: 26px;
+}
+
+.google-carousel-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #c9c9c9;
+  cursor: pointer;
+  transition:
+    width 0.2s ease,
+    background 0.2s ease;
+}
+
+.google-carousel-dot.active {
+  width: 26px;
+  border-radius: 10px;
+  background: var(--rouge);
+}
+
+.google-reviews-button {
+  margin-top: 36px;
+  text-align: center;
+}
+
+/* Tablette */
+
+@media screen and (max-width: 900px) {
+  .google-review-card {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+}
+
+/* Téléphone */
+
+@media screen and (max-width: 650px) {
+  .google-reviews-section {
+    padding: 65px 12px;
+  }
+
+  .google-reviews-carousel {
+    position: relative;
+    display: block;
+  }
+
+  .google-carousel-window {
+    width: 100%;
+  }
+
+  .google-carousel-track {
+    gap: 16px;
+  }
+
+  .google-review-card {
+    flex-basis: 100%;
+    min-height: 0;
+    padding: 22px;
+  }
+
+  .google-carousel-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    width: 38px;
+    height: 38px;
+    transform: translateY(-50%);
+    font-size: 1.6rem;
+  }
+
+  .google-carousel-arrow:hover {
+    transform: translateY(-50%) scale(1.05);
+  }
+
+  .google-carousel-prev {
+    left: 6px;
+  }
+
+  .google-carousel-next {
+    right: 6px;
+  }
+
+  .google-review-card {
+    padding-right: 48px;
+    padding-left: 48px;
+  }
+
+  .google-name {
+    width: 100%;
+    text-align: center;
+  }
+
+  .google-global-stars {
+    font-size: 1.35rem;
+  }
+
+  .google-reviews-button .btn {
+    width: 100%;
+    max-width: 310px;
+    justify-content: center;
+  }
+}
+
+/* Petits téléphones */
+
+@media screen and (max-width: 400px) {
+  .google-reviews-section {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .google-review-card {
+    padding: 20px 43px;
+  }
+
+  .google-carousel-prev {
+    left: 4px;
+  }
+
+  .google-carousel-next {
+    right: 4px;
+  }
+
+  .google-review-avatar {
+    flex-basis: 44px;
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+  }
+
+  .google-review-header h3 {
+    font-size: 1rem;
+  }
+
+  .google-review-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Respect des préférences d’accessibilité */
+
+@media (prefers-reduced-motion: reduce) {
+  .google-carousel-track {
+    transition: none !important;
+  }
+}
