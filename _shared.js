@@ -106,3 +106,174 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.1 });
   revealEls.forEach(el => observer.observe(el));
 });
+/* ═══════════════════════════════════════
+   CARROUSEL DES AVIS GOOGLE
+   ═══════════════════════════════════════ */
+
+document.addEventListener('DOMContentLoaded', () => {
+  const reviewsSection = document.querySelector(
+    '.google-reviews-section'
+  );
+
+  if (!reviewsSection) {
+    return;
+  }
+
+  const track = reviewsSection.querySelector(
+    '.google-reviews-track'
+  );
+
+  const cards = Array.from(
+    reviewsSection.querySelectorAll(
+      '.google-review-card'
+    )
+  );
+
+  const previousButton = reviewsSection.querySelector(
+    '.google-review-arrow-left'
+  );
+
+  const nextButton = reviewsSection.querySelector(
+    '.google-review-arrow-right'
+  );
+
+  const dotsContainer = reviewsSection.querySelector(
+    '.google-reviews-dots'
+  );
+
+  if (
+    !track ||
+    cards.length === 0 ||
+    !previousButton ||
+    !nextButton ||
+    !dotsContainer
+  ) {
+    return;
+  }
+
+  let currentIndex = 0;
+  let visibleCards = getVisibleCards();
+
+  function getVisibleCards() {
+    if (window.innerWidth <= 650) {
+      return 1;
+    }
+
+    if (window.innerWidth <= 900) {
+      return 2;
+    }
+
+    return 3;
+  }
+
+  function getMaximumIndex() {
+    return Math.max(
+      0,
+      cards.length - visibleCards
+    );
+  }
+
+  function createDots() {
+    dotsContainer.innerHTML = '';
+
+    const maximumIndex = getMaximumIndex();
+
+    for (
+      let index = 0;
+      index <= maximumIndex;
+      index += 1
+    ) {
+      const dot = document.createElement('button');
+
+      dot.type = 'button';
+      dot.className = 'google-review-dot';
+
+      dot.setAttribute(
+        'aria-label',
+        `Afficher l’avis ${index + 1}`
+      );
+
+      dot.addEventListener('click', () => {
+        currentIndex = index;
+        updateSlider();
+      });
+
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function updateSlider() {
+    const firstCard = cards[0];
+
+    if (!firstCard) {
+      return;
+    }
+
+    const trackStyle = window.getComputedStyle(track);
+
+    const gap =
+      parseFloat(trackStyle.columnGap) ||
+      parseFloat(trackStyle.gap) ||
+      0;
+
+    const cardWidth =
+      firstCard.getBoundingClientRect().width;
+
+    const movement =
+      currentIndex * (cardWidth + gap);
+
+    track.style.transform =
+      `translateX(-${movement}px)`;
+
+    previousButton.disabled =
+      currentIndex === 0;
+
+    nextButton.disabled =
+      currentIndex >= getMaximumIndex();
+
+    const dots = dotsContainer.querySelectorAll(
+      '.google-review-dot'
+    );
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle(
+        'active',
+        index === currentIndex
+      );
+    });
+  }
+
+  previousButton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex -= 1;
+      updateSlider();
+    }
+  });
+
+  nextButton.addEventListener('click', () => {
+    if (currentIndex < getMaximumIndex()) {
+      currentIndex += 1;
+      updateSlider();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    const newVisibleCards = getVisibleCards();
+
+    if (newVisibleCards !== visibleCards) {
+      visibleCards = newVisibleCards;
+
+      currentIndex = Math.min(
+        currentIndex,
+        getMaximumIndex()
+      );
+
+      createDots();
+    }
+
+    updateSlider();
+  });
+
+  createDots();
+  updateSlider();
+});
