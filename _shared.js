@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <img src="logo.png" alt="Logo Action Secours Formation" width="52" height="52" style="height:52px;width:auto;">
         <div class="nav-logo-text">
           <strong>Action Secours Formation</strong>
-          <span>Formateur certifié · Île-de-France</span>
+          <span>Formateur certifié · Paris & Île-de-France</span>
         </div>
       </a>
       <ul class="nav-links" id="navLinks" role="menubar">
