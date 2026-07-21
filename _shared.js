@@ -69,17 +69,31 @@ document.addEventListener('DOMContentLoaded', () => {
     © 2026 Action Secours Formation – Alexis GALLOIS
   </span>
 
-  <div class="footer-legal-links">
-    <a href="mentions-legales.html">
-      Mentions légales
-    </a>
+ <div class="footer-legal-links">
 
-    <span aria-hidden="true">•</span>
+  <a href="mentions-legales.html">
+    Mentions légales
+  </a>
 
-    <span>
-      Paris · Île-de-France
-    </span>
-  </div>
+  <span aria-hidden="true">•</span>
+
+  <a href="politique-confidentialite.html">
+    Politique de confidentialité
+  </a>
+
+  <span aria-hidden="true">•</span>
+
+  <a href="conditions-generales-vente.html">
+    CGV
+  </a>
+
+  <span aria-hidden="true">•</span>
+
+  <span>
+    Paris · Île-de-France
+  </span>
+
+</div>
 
 </div>
   </footer>`;
