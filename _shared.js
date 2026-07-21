@@ -63,10 +63,25 @@ document.addEventListener('DOMContentLoaded', () => {
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2025 Action Secours Formation – Alexis GALLOIS</span>
-      <span>Île-de-France · Partout en France</span>
-    </div>
+   <div class="footer-bottom">
+
+  <span>
+    © 2026 Action Secours Formation – Alexis GALLOIS
+  </span>
+
+  <div class="footer-legal-links">
+    <a href="mentions-legales.html">
+      Mentions légales
+    </a>
+
+    <span aria-hidden="true">•</span>
+
+    <span>
+      Paris · Île-de-France
+    </span>
+  </div>
+
+</div>
   </footer>`;
 
   // Inject nav before main
