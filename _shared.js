@@ -25,8 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
           </ul>
         </li>
         <li><a href="index.html#tarifs">Tarifs</a></li>
-        <li><a href="index.html#about">À propos</a></li>
-        <li><a href="index.html#contact" class="nav-cta">Demander un devis</a></li>
+<li><a href="index.html#about">À propos</a></li>
+<li><a href="index.html#contact">Contact</a></li>
+<li><a href="index.html#contact" class="nav-cta">Demander un devis</a></li>
       </ul>
       <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu" role="button" tabindex="0">
         <span></span><span></span><span></span>
