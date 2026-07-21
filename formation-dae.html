@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Formation DAE et Gestes qui sauvent à Paris et en Île-de-France | Action Secours Formation</title>
+<meta name="description" content="Formation DAE, massage cardiaque et gestes qui sauvent à Paris et en Île-de-France. Formation pratique directement dans vos locaux.">
+<meta name="keywords" content="formation gestes qui sauvent Île-de-France, formation DAE entreprise, formation RCP Paris, défibrillateur entreprise, formation arrêt cardiaque, premiers secours Essonne"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://asf-formation.com/formation-dae.html">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="_shared.css">
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, #f0fff4 0%, #fff 60%, #f0fff4 100%);
+      padding: 70px 5% 60px; position: relative; overflow: hidden;
+      border-bottom: 2px solid rgba(45,122,45,0.1);
+    }
+    .page-hero::before {
+      content: ''; position: absolute; top: -80px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(45,122,45,0.05) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .page-hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 380px; gap: 60px; align-items: center; }
+    .page-hero-emoji { font-size: 4rem; display: block; margin-bottom: 16px; }
+    .page-hero h1 { font-size: clamp(1.9rem, 3vw, 2.8rem); font-weight: 800; color: var(--noir); margin-bottom: 16px; line-height: 1.2; }
+    .page-hero h1 em { font-style: normal; color: var(--rouge); }
+    .page-hero-desc { font-size: 1.02rem; color: var(--gris); margin-bottom: 28px; max-width: 580px; line-height: 1.7; }
+    .page-hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+    .hero-cta-group { display: flex; gap: 12px; flex-wrap: wrap; }
+    .info-card { background: var(--blanc); border-radius: 18px; padding: 28px 24px; box-shadow: 0 8px 40px rgba(0,0,0,0.1); border: 1.5px solid var(--border); }
+    .info-card h3 { font-size: 1rem; font-weight: 800; color: var(--noir); margin-bottom: 18px; }
+    .info-row { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+    .info-row:last-child { border-bottom: none; }
+    .info-row .info-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+    .info-row strong { display: block; font-size: 0.85rem; font-weight: 700; color: var(--noir); }
+    .info-row span { font-size: 0.82rem; color: var(--gris); }
+    .info-price { background: var(--rouge-light); border-radius: 12px; padding: 14px 16px; margin-top: 16px; text-align: center; }
+    .info-price .price-from { font-size: 0.78rem; color: var(--gris); }
+    .info-price .price-val { font-size: 1.6rem; font-weight: 800; color: var(--rouge); display: block; }
+    .info-price .price-note { font-size: 0.75rem; color: var(--gris); }
+
+    section.content-section { padding: 70px 5%; }
+    section.content-section.bg-grey { background: var(--gris-clair); }
+    .content-inner { max-width: 1200px; margin: 0 auto; }
+
+    /* Timeline du déroulement */
+    .timeline { display: flex; flex-direction: column; gap: 0; margin-top: 40px; position: relative; }
+    .timeline::before {
+      content: ''; position: absolute; left: 28px; top: 28px; bottom: 28px; width: 2px;
+      background: linear-gradient(to bottom, var(--rouge), rgba(208,32,26,0.1));
+    }
+    .timeline-item { display: flex; gap: 24px; align-items: flex-start; padding: 0 0 28px 0; position: relative; }
+    .timeline-dot {
+      width: 56px; height: 56px; border-radius: 50%; background: var(--rouge);
+      display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
+      flex-shrink: 0; box-shadow: 0 4px 16px rgba(208,32,26,0.25); z-index: 1;
+    }
+    .timeline-content { background: var(--blanc); border-radius: 14px; padding: 20px 22px; border: 1.5px solid var(--border); box-shadow: var(--shadow); flex: 1; }
+    .timeline-content h4 { font-size: 1rem; font-weight: 800; color: var(--noir); margin-bottom: 6px; }
+    .timeline-content p { font-size: 0.88rem; color: var(--gris); line-height: 1.55; }
+    .timeline-duration { font-size: 0.75rem; font-weight: 700; color: var(--rouge); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+
+    /* Deux modules */
+    .modules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 40px; }
+    .module-card { background: var(--blanc); border-radius: 18px; overflow: hidden; border: 1.5px solid var(--border); box-shadow: var(--shadow); }
+    .module-header { padding: 24px 26px 18px; }
+    .module-header.dae { background: linear-gradient(135deg, #f0fff4, #fff); border-bottom: 2px solid rgba(45,122,45,0.1); }
+    .module-emoji { font-size: 2.4rem; display: block; margin-bottom: 10px; }
+    .module-header h3 { font-size: 1.15rem; font-weight: 800; color: var(--noir); margin-bottom: 6px; }
+    .module-header p { font-size: 0.87rem; color: var(--gris); }
+    .module-body { padding: 22px 26px; }
+    .program-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .program-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem; color: var(--gris-fonce); line-height: 1.45; }
+    .program-list li::before { content: "→"; color: var(--rouge); font-weight: 800; flex-shrink: 0; }
+
+    .competences-bloc { background: var(--noir); color: var(--blanc); border-radius: 18px; padding: 36px 40px; margin-top: 40px; }
+    .competences-bloc h3 { font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--rouge); margin-bottom: 20px; }
+    .comp-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+    .comp-item { display: flex; align-items: flex-start; gap: 10px; font-size: 0.88rem; color: #d0d0d0; line-height: 1.4; }
+    .comp-item::before { content: "✓"; color: var(--rouge); font-weight: 800; font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* Chiffres choc */
+    .chiffres-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+    .chiffre-card { background: var(--blanc); border-radius: 18px; padding: 28px 24px; border: 1.5px solid var(--border); box-shadow: var(--shadow); text-align: center; }
+    .chiffre-val { font-size: 2.4rem; font-weight: 800; color: var(--rouge); display: block; line-height: 1.1; margin-bottom: 8px; }
+    .chiffre-label { font-size: 0.85rem; color: var(--gris); line-height: 1.5; }
+
+    .conditions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+    .condition-bloc { background: var(--blanc); border-radius: 14px; padding: 22px 20px; border-left: 4px solid var(--rouge); box-shadow: var(--shadow); }
+    .condition-bloc h4 { font-size: 0.75rem; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: var(--rouge); margin-bottom: 10px; }
+    .condition-bloc p, .condition-bloc ul { font-size: 0.88rem; color: var(--gris); line-height: 1.6; }
+    .condition-bloc ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .condition-bloc ul li::before { content: "→ "; color: var(--rouge); font-weight: 700; }
+
+    .tarifs-page { padding: 70px 5%; background: var(--gris-clair); }
+    .tarifs-page-inner { max-width: 860px; margin: 0 auto; }
+    .tarifs-side-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .tarif-table { background: var(--blanc); border-radius: 18px; overflow: hidden; border: 1.5px solid var(--border); box-shadow: var(--shadow); }
+    .tarif-table-head { padding: 20px 28px; border-bottom: 1px solid var(--border); }
+    .tarif-table-head.dae { background: linear-gradient(135deg, #f0fff4, #fff); }
+    .tarif-table-head h3 { font-size: 0.95rem; font-weight: 800; color: var(--noir); }
+    .tarif-table-row { display: flex; justify-content: space-between; align-items: center; padding: 13px 28px; border-bottom: 1px dashed var(--border); font-size: 0.88rem; }
+    .tarif-table-row:last-child { border-bottom: none; }
+    .tarif-table-row .nb { color: var(--gris); }
+    .tarif-table-row .prix { font-weight: 800; color: var(--rouge); }
+    .tarif-note { padding: 12px 28px; background: #edf7ed; font-size: 0.8rem; color: var(--vert); font-weight: 600; display: flex; gap: 8px; align-items: center; }
+
+    .docs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+    .doc-item { display: flex; align-items: center; gap: 12px; background: var(--blanc); border-radius: 10px; padding: 14px 18px; border: 1.5px solid var(--border); font-size: 0.88rem; font-weight: 600; color: var(--gris-fonce); }
+    .doc-icon { font-size: 1.4rem; flex-shrink: 0; }
+
+    /* Urgence block */
+    .urgence-bloc {
+      background: var(--noir); border-radius: 18px; padding: 28px 32px; margin-top: 40px;
+      display: flex; align-items: center; gap: 28px;
+    }
+    .urgence-emoji { font-size: 3rem; flex-shrink: 0; }
+    .urgence-content h3 { font-size: 1.05rem; font-weight: 800; color: var(--blanc); margin-bottom: 10px; }
+    .urgence-numbers { display: flex; gap: 12px; flex-wrap: wrap; }
+    .urgence-num {
+      background: var(--rouge); color: var(--blanc);
+      font-size: 1.2rem; font-weight: 800;
+      padding: 8px 18px; border-radius: 8px;
+    }
+    .urgence-sub { font-size: 0.82rem; color: #aaa; margin-top: 10px; }
+    .urgence-sub strong { color: var(--blanc); }
+
+    .cta-banner { background: var(--rouge); padding: 60px 5%; text-align: center; }
+    .cta-banner h2 { font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 800; color: var(--blanc); margin-bottom: 12px; }
+    .cta-banner p { color: rgba(255,255,255,0.8); font-size: 1rem; margin-bottom: 28px; }
+    .cta-banner-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    .faq-inline { max-width: 860px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { background: var(--blanc); border-radius: 12px; border: 1.5px solid var(--border); box-shadow: var(--shadow); overflow: hidden; }
+    .faq-item summary { padding: 18px 22px; font-weight: 700; font-size: 0.93rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--noir); }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary .faq-icon { color: var(--rouge); font-size: 1.2rem; flex-shrink: 0; margin-left: 12px; transition: transform 0.3s; }
+    .faq-item[open] summary .faq-icon { transform: rotate(45deg); }
+    .faq-item summary:hover { background: var(--rouge-light); }
+    .faq-answer { padding: 0 22px 18px; color: var(--gris); font-size: 0.9rem; line-height: 1.65; }
+
+    @media (max-width: 900px) {
+      .page-hero-inner { grid-template-columns: 1fr; }
+      .modules-grid { grid-template-columns: 1fr; }
+      .comp-grid { grid-template-columns: 1fr 1fr; }
+      .conditions-grid { grid-template-columns: 1fr; }
+      .chiffres-grid { grid-template-columns: 1fr; }
+      .docs-grid { grid-template-columns: 1fr; }
+      .tarifs-side-grid { grid-template-columns: 1fr; }
+      .urgence-bloc { flex-direction: column; }
+    }
+    @media (max-width: 600px) { .comp-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<div class="breadcrumb-bar">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Accueil</a>
+    <span>/</span>
+    <span>Gestes qui sauvent / DAE</span>
+  </div>
+</div>
+
+<main>
+
+<!-- ── PAGE HERO ── -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <span class="page-hero-emoji">❤️</span>
+<h1>Formation <em>DAE et Gestes qui sauvent à Paris et en Île-de-France</em></h1>
+      <p class="page-hero-desc">Face à un arrêt cardiaque, chaque seconde compte. Cette formation courte vous apprend à alerter les secours, à réaliser les gestes d'urgence et à utiliser un défibrillateur — sans prérequis, en quelques heures seulement.</p>
+      <div class="page-hero-tags">
+        <span class="tag vert">⏱ 2h à 3h</span>
+        <span class="tag orange">📍 Dans vos locaux</span>
+        <span class="tag vert">✅ Financement OPCO</span>
+        <span class="tag bleu">👥 4 à 12 participants</span>
+        <span class="tag gris">Sans prérequis</span>
+      </div>
+      <div class="hero-cta-group">
+        <a href="index.html#contact" class="btn btn-primary">Demander un devis gratuit →</a>
+        <a href="#programme" class="btn btn-secondary">Voir le programme</a>
+      </div>
+    </div>
+    <div class="info-card">
+      <h3>📋 Informations clés</h3>
+      <div class="info-row">
+        <span class="info-icon">⏱</span>
+        <div><strong>Durée</strong><span>GQS : ~2h à 3h<br>RCP/DAE : ~2h</span></div>
+      </div>
+      <div class="info-row">
+        <span class="info-icon">📍</span>
+        <div><strong>Lieu</strong><span>Dans vos locaux en Île-de-France<br>Partout en France sur demande</span></div>
+      </div>
+      <div class="info-row">
+        <span class="info-icon">👥</span>
+        <div><strong>Groupe</strong><span>4 à 12 participants</span></div>
+      </div>
+      <div class="info-row">
+        <span class="info-icon">🎯</span>
+        <div><strong>Public</strong><span>Tout public, sans prérequis</span></div>
+      </div>
+      <div class="info-row">
+        <span class="info-icon">🧰</span>
+        <div><strong>Matériel fourni</strong><span>Mannequin RCP + DAE pédagogique</span></div>
+      </div>
+      <div class="info-row">
+        <span class="info-icon">💶</span>
+        <div><strong>Financement</strong><span>OPCO possible</span></div>
+      </div>
+      <div class="info-price">
+        <span class="price-from">GQS à partir de</span>
+        <span class="price-val">70 €</span>
+        <span class="price-note">par personne selon le groupe</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── POURQUOI C'EST URGENT ── -->
+<section class="content-section bg-grey">
+  <div class="content-inner">
+    <div class="section-header center reveal">
+      <div class="section-label">Pourquoi se former ?</div>
+      <h2 class="section-title">En France, l'arrêt cardiaque<br>tue <em>faute de réaction</em></h2>
+    </div>
+    <div class="chiffres-grid">
+      <div class="chiffre-card reveal reveal-delay-1">
+        <span class="chiffre-val">50 000</span>
+        <span class="chiffre-label">arrêts cardiaques surviennent chaque année en France</span>
+      </div>
+      <div class="chiffre-card reveal reveal-delay-2">
+        <span class="chiffre-val">8%</span>
+        <span class="chiffre-label">seulement survivent, faute d'intervention rapide des témoins</span>
+      </div>
+      <div class="chiffre-card reveal reveal-delay-3">
+        <span class="chiffre-val">×3</span>
+        <span class="chiffre-label">les chances de survie sont multipliées quand un témoin agit dans les 5 premières minutes</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROGRAMME ── -->
+<section class="content-section" id="programme">
+  <div class="content-inner">
+    <div class="section-header reveal">
+      <div class="section-label">Programme</div>
+      <h2 class="section-title">Deux formations <em>complémentaires</em></h2>
+      <p class="section-sub">Selon vos objectifs, choisissez la sensibilisation GQS (Gestes Qui Sauvent) ou l'approfondissement RCP/DAE — ou combinez les deux.</p>
+    </div>
+
+    <div class="modules-grid reveal">
+      <div class="module-card">
+        <div class="module-header dae">
+          <span class="module-emoji">🤲</span>
+          <h3>Formation GQS — Gestes Qui Sauvent</h3>
+          <p>Sensibilisation aux premiers gestes — environ 2h à 3h</p>
+        </div>
+        <div class="module-body">
+          <ul class="program-list">
+            <li>Reconnaître une urgence et alerter les secours (15 / 18 / 112 / 114)</li>
+            <li>Mise en Position Latérale de Sécurité (PLS)</li>
+            <li>Massage cardiaque externe — initiation</li>
+            <li>Utilisation d'un défibrillateur automatisé (DAE)</li>
+            <li>Gestion d'une obstruction des voies aériennes (étouffement)</li>
+            <li>Pratique sur mannequin avec retour du formateur</li>
+          </ul>
+        </div>
+      </div>
+      <div class="module-card">
+        <div class="module-header dae">
+          <span class="module-emoji">💓</span>
+          <h3>Formation RCP/DAE — Approfondissement</h3>
+          <p>Réanimation cardio-pulmonaire et défibrillateur — environ 2h</p>
+        </div>
+        <div class="module-body">
+          <ul class="program-list">
+            <li>Comprendre l'arrêt cardiaque et ses signes</li>
+            <li>RCP adulte : technique complète 30:2</li>
+            <li>Mise en place et utilisation du DAE étape par étape</li>
+            <li>Coordination RCP + DAE en binôme</li>
+            <li>Scénarios pratiques sur mannequin</li>
+            <li>Gestion de la scène jusqu'à l'arrivée des secours</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="competences-bloc reveal">
+      <h3>Ce que vos collaborateurs sauront faire</h3>
+      <div class="comp-grid">
+        <div class="comp-item">Reconnaître un arrêt cardiaque</div>
+        <div class="comp-item">Alerter les secours avec les bons mots</div>
+        <div class="comp-item">Pratiquer le massage cardiaque externe</div>
+        <div class="comp-item">Mettre en place et utiliser un DAE</div>
+        <div class="comp-item">Réaliser la PLS sur une victime inconsciente</div>
+        <div class="comp-item">Gérer une obstruction des voies aériennes</div>
+        <div class="comp-item">Coordonner RCP et DAE à deux</div>
+        <div class="comp-item">Gérer la scène jusqu'aux secours</div>
+        <div class="comp-item">Agir sans panique dans l'urgence</div>
+      </div>
+    </div>
+
+    <!-- Numéros d'urgence -->
+    <div class="urgence-bloc reveal">
+      <div class="urgence-emoji">🚨</div>
+      <div class="urgence-content">
+        <h3>Numéros d'urgence à connaître absolument</h3>
+        <div class="urgence-numbers">
+          <span class="urgence-num">15</span>
+          <span class="urgence-num">18</span>
+          <span class="urgence-num">112</span>
+          <span class="urgence-num">114</span>
+        </div>
+        <p class="urgence-sub">
+          <strong>15</strong> SAMU · <strong>18</strong> Pompiers · <strong>112</strong> Numéro européen · <strong>114</strong> Urgences sourds/malentendants (SMS/appel)
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONDITIONS ── -->
+<section class="content-section bg-grey" id="conditions">
+  <div class="content-inner">
+    <div class="section-header reveal">
+      <div class="section-label">Modalités</div>
+      <h2 class="section-title">Public, conditions &amp; <em>accompagnement</em></h2>
+    </div>
+    <div class="conditions-grid">
+      <div class="condition-bloc reveal reveal-delay-1">
+        <h4>Public cible</h4>
+        <p>Tout public, sans aucun prérequis. Idéal pour sensibiliser rapidement l'ensemble des collaborateurs d'une entreprise. Accessible aux travailleurs en situation de handicap. Parfait complément à une formation incendie ou SST.</p>
+      </div>
+      <div class="condition-bloc reveal reveal-delay-2">
+        <h4>Organisation</h4>
+        <ul>
+          <li>4 à 12 participants par session</li>
+          <li>Formation dans vos locaux</li>
+          <li>Mannequin de RCP et DAE pédagogique fournis</li>
+          <li>Aucun document préalable requis</li>
+          <li>Formation ludique, pratique et mémorisable</li>
+        </ul>
+      </div>
+      <div class="condition-bloc reveal reveal-delay-3">
+        <h4>Votre formateur</h4>
+        <ul>
+          <li>Formateur certifié INRS</li>
+          <li>Sapeur-Pompier Volontaire actif</li>
+          <li>Master 2 Sécurité &amp; Gestion des risques</li>
+          <li>Expérience terrain des urgences vitales</li>
+          <li>Pédagogie positive et bienveillante</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:50px;" class="reveal">
+      <div class="section-label">Documents délivrés</div>
+      <h3 class="section-title" style="font-size:1.4rem;">À l'issue de la formation :</h3>
+      <div class="docs-grid">
+        <div class="doc-item"><span class="doc-icon">📄</span>Attestation individuelle de sensibilisation</div>
+        <div class="doc-item"><span class="doc-icon">✍️</span>Feuille d'émargement</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TARIFS ── -->
+<section class="tarifs-page" id="tarifs">
+  <div class="tarifs-page-inner">
+    <div class="section-header center reveal">
+      <div class="section-label">Tarifs</div>
+      <h2 class="section-title">Tarifs <em>dégressifs</em></h2>
+      <p class="section-sub">Des tarifs adaptés à votre groupe. Financement OPCO possible selon votre branche.</p>
+    </div>
+    <div class="tarifs-side-grid reveal">
+      <div class="tarif-table">
+        <div class="tarif-table-head dae">
+          <h3>🤲 Gestes Qui Sauvent (GQS)</h3>
+        </div>
+        <div class="tarif-table-row"><span class="nb">4 – 5 personnes</span><span class="prix">80 € / pers.</span></div>
+        <div class="tarif-table-row"><span class="nb">6 – 8 personnes</span><span class="prix">75 € / pers.</span></div>
+        <div class="tarif-table-row"><span class="nb">9 – 10 personnes</span><span class="prix">70 € / pers.</span></div>
+        <div class="tarif-note">✅ Financement OPCO possible</div>
+      </div>
+      <div class="tarif-table">
+        <div class="tarif-table-head dae">
+          <h3>💓 RCP / DAE</h3>
+        </div>
+        <div class="tarif-table-row"><span class="nb">4 – 5 personnes</span><span class="prix">50 € / pers.</span></div>
+        <div class="tarif-table-row"><span class="nb">6 – 10 personnes</span><span class="prix">45 € / pers.</span></div>
+        <div class="tarif-note">✅ Financement OPCO possible</div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:18px;font-size:0.85rem;color:var(--gris);">Vous pouvez combiner GQS + RCP/DAE — devis personnalisé sur demande. Réponse sous 24h.</p>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="content-section" id="faq">
+  <div class="content-inner">
+    <div class="section-header center reveal">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Questions <em>fréquentes</em></h2>
+    </div>
+    <div class="faq-inline">
+      <details class="faq-item reveal">
+        <summary>Faut-il une compétence particulière pour utiliser un DAE ? <span class="faq-icon">+</span></summary>
+        <div class="faq-answer">Non ! Le DAE est conçu pour être utilisé par n'importe quel témoin, même sans formation médicale. L'appareil guide vocalement l'utilisateur étape par étape. Cependant, être formé permet de réagir plus vite, sans panique, et de coordonner efficacement le massage cardiaque avec le DAE. Chaque minute compte.</div>
+      </details>
+      <details class="faq-item reveal reveal-delay-1">
+        <summary>Quelle est la différence entre GQS et SST ? <span class="faq-icon">+</span></summary>
+        <div class="faq-answer">Les <strong>Gestes Qui Sauvent (GQS)</strong> constituent une sensibilisation courte (2 à 3h) aux gestes de premiers secours face à une urgence vitale, sans certification. La <strong>formation SST</strong> est complète sur 14h, certifiante INRS, et couvre également la prévention des risques professionnels et un éventail plus large de situations d'urgence. Les GQS permettent de former rapidement tout le personnel ; le SST est destiné aux référents désignés.</div>
+      </details>
+      <details class="faq-item reveal reveal-delay-2">
+        <summary>Quels numéros appeler en cas d'arrêt cardiaque ? <span class="faq-icon">+</span></summary>
+        <div class="faq-answer">Appelez immédiatement le <strong>15</strong> (SAMU), le <strong>18</strong> (pompiers) ou le <strong>112</strong> (numéro européen, depuis un portable). Pour les personnes sourdes ou malentendantes, le <strong>114</strong> est disponible par SMS ou appel. Ne raccrochez pas : l'opérateur vous guide et peut coordonner l'envoi des secours les plus proches.</div>
+      </details>
+      <details class="faq-item reveal reveal-delay-3">
+        <summary>La formation peut-elle s'intégrer dans un programme plus large ? <span class="faq-icon">+</span></summary>
+        <div class="faq-answer">Absolument. La formation GQS ou RCP/DAE peut être combinée avec une formation incendie (extincteurs + évacuation) en une journée complète. C'est une solution souvent adoptée par les entreprises souhaitant couvrir l'ensemble de leurs obligations de sécurité en une seule intervention. Contactez-nous pour un devis combiné.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<div class="cta-banner">
+  <h2>Une vie peut dépendre<br>d'un seul geste.</h2>
+  <p>100% des vies sauvées commencent par un geste appris. Formez vos équipes dès aujourd'hui.</p>
+  <div class="cta-banner-btns">
+    <a href="index.html#contact" class="btn btn-outline-white">Demander un devis gratuit →</a>
+    <a href="tel:0659038504" class="btn" style="background:rgba(255,255,255,0.15);color:#fff;border:2px solid rgba(255,255,255,0.3);">📞 06 59 03 85 04</a>
+  </div>
+</div>
+
+</main>
+
+<script src="_shared.js"></script>
+</body>
+</html>
