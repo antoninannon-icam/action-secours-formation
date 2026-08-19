@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <ul class="nav-dropdown-menu">
             <li><a href="formation-incendie.html" ${currentPage==='formation-incendie.html'?'class="active"':''}>🔥 Formation Incendie</a></li>
             <li><a href="formation-sst.html" ${currentPage==='formation-sst.html'?'class="active"':''}>🩺 Formation SST</a></li>
-            <li><a href="formation-dae.html" ${currentPage==='formation-dae.html'?'class="active"':''}>❤️ Gestes qui sauvent / DAE</a></li>
+<li><a href="formation-dae.html" ${currentPage==='formation-dae.html'?'class="active"':''}>❤️ Gestes de premiers secours / DAE</a></li>
           </ul>
         </li>
         <li><a href="index.html#tarifs">Tarifs</a></li>
@@ -56,8 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
           <li><a href="formation-incendie.html">🔥 Formation Incendie</a></li>
           <li><a href="formation-sst.html">🛡️ SST – Formation initiale</a></li>
           <li><a href="formation-sst.html#recyclage">🔄 SST – Recyclage (MAC)</a></li>
-          <li><a href="formation-dae.html">❤️ Gestes qui sauvent / DAE</a></li>
-        </ul>
+<li><a href="formation-dae.html">❤️ Gestes de premiers secours / DAE</a></li>
+</ul>
       </div>
       <div>
         <h4>Contact</h4>
